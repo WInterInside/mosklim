@@ -13,35 +13,9 @@
 				href="img/favicons/favicon.svg"
 				type="image/svg+xml">
 
-	<!-- иконки для разных девайсов -> -->
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="img//favicons/apple-touch-icon-57x57.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img//favicons/apple-touch-icon-114x114.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img//favicons/apple-touch-icon-72x72.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img//favicons/apple-touch-icon-144x144.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="img//favicons/apple-touch-icon-60x60.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="img//favicons/apple-touch-icon-180x180.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="img//favicons/apple-touch-icon-120x120.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="img//favicons/apple-touch-icon-76x76.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="img//favicons/apple-touch-icon-152x152.png" />
-
-	<link rel="icon" type="image/png" href="img//favicons/favicon-196x196.png" sizes="196x196" />
-	<link rel="icon" type="image/png" href="img//favicons/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/png" href="img//favicons/favicon-32x32.png" sizes="32x32" />
-	<link rel="icon" type="image/png" href="img//favicons/favicon-16x16.png" sizes="16x16" />
-	<link rel="icon" type="image/png" href="img//favicons/favicon-128x128.png" sizes="128x128" />
-
-	<meta name="application-name" content="&nbsp;"/>
-	<meta name="msapplication-TileColor" content="#FFFFFF" />
-	<meta name="msapplication-TileImage" content="img//favicons/mstile-144x144.png" />
-	<meta name="msapplication-square70x70logo" content="img//favicons/mstile-70x70.png" />
-	<meta name="msapplication-square150x150logo" content="img//favicons/mstile-150x150.png" />
-	<meta name="msapplication-wide310x150logo" content="img//favicons/mstile-310x150.png" />
-	<meta name="msapplication-square310x310logo" content="img//favicons/mstile-310x310.png" />
-	<!-- <- иконки для разных девайсов -->
-
 	<!-- <link rel="stylesheet"
 				href="css/libs.min.css"> -->
-
+				
 	<link rel="stylesheet"
 				href="css/style.min.css">
 
@@ -111,7 +85,7 @@
 					<li class="header__nav-more">
 						<p class="header__nav-more-item"><a href="/" class="header__nav-more-link">статьи</a></p>
 						<p class="header__nav-more-item"><a href="/" class="header__nav-more-link">правила отгрузки, упаковка</a></p>
-						<p class="header__nav-more-item"><a href="news.html" class="header__nav-more-link">новости</a></p>
+						<p class="header__nav-more-item"><a href="/" class="header__nav-more-link">новости</a></p>
 						<p class="header__nav-more-item"><a href="/" class="header__nav-more-link">сделать заказ</a></p>
 						<p class="header__nav-more-item"><a href="/" class="header__nav-more-link">прайс-лист</a></p>
 						<p class="header__nav-more-item"><a href="/" class="header__nav-more-link">вакансии</a></p>
@@ -145,10 +119,10 @@
 
 			<section class="contacts">
 				<div class="container">
-					<h1 class="page-heading">
+					<h1 class="contacts__heading">
 						Контакты
 					</h1>
-
+					
 					<div class="contacts__list">
 						<div class="contacts__item">
 							<h2 class="contacts__name">
@@ -205,57 +179,57 @@
 							</span>
 						</div>
 					</div>
-
+					
 				</div>
 				<div class="contacts__logo">
 					<img src="img/equipment-logo.svg" alt="large logo">
 				</div>
 			</section>
 
-			<!-- Карта -->
-			<div id="contacts__map" style="width: 100%; height: 564px; margin-bottom: 68px;"></div>
+		<!-- Карта -->
+		<div id="contacts__map" style="width: 100%; height: 564px; margin-bottom: 68px;"></div>
 
-			<!-- Подключение API Yandex карт -->
-			<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<!-- Подключение API Yandex карт -->
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
-			<script>
-				document.addEventListener("DOMContentLoaded", function () {
-					// Функция создания карты
-					function createMap(xID, coords) {
-						const mapContainer = document.getElementById(xID);
-						if (mapContainer) {
-						ymaps.ready(function () {
-							const myMap = new ymaps.Map(xID, {
-								center: coords,
-								zoom: 16,
-								controls: []
-							});
-
-							const myPlacemark = new ymaps.Placemark(coords,
-								{
-									hintContent: 'г. Москва, Большая Черемушкинская ул., 34, офис 237',
-									balloonContent: 'г. Москва, Большая Черемушкинская ул., 34, офис 237'
-								},
-								{
-									iconLayout: 'default#image',
-									iconImageHref: 'img/pin.svg',
-									iconImageSize: [36, 36],
-									iconImageOffset: [15, -50]
-								}
-							);
-
-							myMap.geoObjects.add(myPlacemark);
-							myMap.behaviors.disable('scrollZoom');
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				// Функция создания карты
+				function createMap(xID, coords) {
+					const mapContainer = document.getElementById(xID);
+					if (mapContainer) {
+					ymaps.ready(function () {
+						const myMap = new ymaps.Map(xID, {
+							center: coords,
+							zoom: 16,
+							controls: []
 						});
-						} else {
-							console.error("Элемент с ID", xID, "не найден.");
-						}
-					}
 
-					// Вызов функции создания карты
-					createMap('contacts__map', [55.682758, 37.605360]); // Координаты офиса в Москве
-				});
-			</script>
+						const myPlacemark = new ymaps.Placemark(coords, 
+							{
+								hintContent: 'г. Москва, Большая Черемушкинская ул., 34, офис 237',
+								balloonContent: 'г. Москва, Большая Черемушкинская ул., 34, офис 237'
+							},
+							{
+								iconLayout: 'default#image',
+								iconImageHref: 'img/pin.svg',
+								iconImageSize: [36, 36],
+								iconImageOffset: [15, -50]
+							}
+						);
+
+						myMap.geoObjects.add(myPlacemark);
+						myMap.behaviors.disable('scrollZoom');
+					});
+					} else {
+						console.error("Элемент с ID", xID, "не найден.");
+					}
+				}
+
+				// Вызов функции создания карты
+				createMap('contacts__map', [55.682758, 37.605360]); // Координаты офиса в Москве
+			});
+		</script>
 
 		</main>
 
@@ -288,13 +262,13 @@
 						<ul class="footer__nav">
 							<li class="footer__nav-item"><a href="/" class="footer__nav-link">О КОМПАНИИ</a></li>
 							<li class="footer__nav-item"><a href="/" class="footer__nav-link">ДОСТАВКА И ОПЛАТА</a></li>
-							<li class="footer__nav-item"><a href="news.html" class="footer__nav-link">новости</a></li>
+							<li class="footer__nav-item"><a href="/" class="footer__nav-link">новости</a></li>
 							<li class="footer__nav-item"><a href="/" class="footer__nav-link">СЕРТИФИКАТЫ</a></li>
 							<li class="footer__nav-item"><a href="/" class="footer__nav-link">каталоги</a></li>
 							<li class="footer__nav-item"><a href="/" class="footer__nav-link">ПРАЙС-ЛИСТ</a></li>
 							<li class="footer__nav-item"><a href="/" class="footer__nav-link">партнеры</a></li>
 							<li class="footer__nav-item"><a href="/" class="footer__nav-link">СДЕЛАТЬ ЗАКАЗ</a></li>
-							<li class="footer__nav-item"><a href="contacts.html" class="footer__nav-link">контакты</a></li>
+							<li class="footer__nav-item"><a href="/сontacts" class="footer__nav-link">контакты</a></li>
 						</ul>
 					</div>
 

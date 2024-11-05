@@ -1,7 +1,10 @@
 .news {
 	position: relative;
 	padding: 46px 0 166px 0;
-	// overflow: hidden;
+
+	&--page {
+		padding-bottom: 67px;
+	}
 
 	&__caption {
 		font-size: 40px;
@@ -39,8 +42,30 @@
 		display: flex;
 		gap: 36px;
 
+		&--page {
+			flex-wrap: wrap;
+			margin-bottom: 90px;
+
+			@media only screen and (max-width: 769px) {
+				margin-bottom: 50px;
+			}
+
+			.news__item {
+				width: 30%;
+
+				@media only screen and (max-width: 769px) {
+					width: 45%;
+				}
+
+				@media only screen and (max-width: 585px) {
+					width: 100%;
+				}
+			}
+		}
+
 		@media only screen and (max-width: 769px) {
 			flex-wrap: wrap;
+			gap: 26px;
 		}
 	}
 
@@ -91,6 +116,10 @@
 
 		@media only screen and (max-width: 1272px) {
 			height: 220px;
+		}
+
+		@media only screen and (max-width: 585px) {
+			height: 150px;
 		}
 	}
 

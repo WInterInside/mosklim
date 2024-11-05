@@ -15,10 +15,10 @@
 
 			<section class="contacts">
 				<div class="container">
-					<h1 class="contacts__heading">
+					<h1 class="page-heading">
 						Контакты
 					</h1>
-					
+
 					<div class="contacts__list">
 						<div class="contacts__item">
 							<h2 class="contacts__name">
@@ -75,57 +75,57 @@
 							</span>
 						</div>
 					</div>
-					
+
 				</div>
 				<div class="contacts__logo">
 					<img src="img/equipment-logo.svg" alt="large logo">
 				</div>
 			</section>
 
-		<!-- Карта -->
-		<div id="contacts__map" style="width: 100%; height: 564px; margin-bottom: 68px;"></div>
+			<!-- Карта -->
+			<div id="contacts__map" style="width: 100%; height: 564px; margin-bottom: 68px;"></div>
 
-		<!-- Подключение API Yandex карт -->
-		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+			<!-- Подключение API Yandex карт -->
+			<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				// Функция создания карты
-				function createMap(xID, coords) {
-					const mapContainer = document.getElementById(xID);
-					if (mapContainer) {
-					ymaps.ready(function () {
-						const myMap = new ymaps.Map(xID, {
-							center: coords,
-							zoom: 16,
-							controls: []
+			<script>
+				document.addEventListener("DOMContentLoaded", function () {
+					// Функция создания карты
+					function createMap(xID, coords) {
+						const mapContainer = document.getElementById(xID);
+						if (mapContainer) {
+						ymaps.ready(function () {
+							const myMap = new ymaps.Map(xID, {
+								center: coords,
+								zoom: 16,
+								controls: []
+							});
+
+							const myPlacemark = new ymaps.Placemark(coords,
+								{
+									hintContent: 'г. Москва, Большая Черемушкинская ул., 34, офис 237',
+									balloonContent: 'г. Москва, Большая Черемушкинская ул., 34, офис 237'
+								},
+								{
+									iconLayout: 'default#image',
+									iconImageHref: 'img/pin.svg',
+									iconImageSize: [36, 36],
+									iconImageOffset: [15, -50]
+								}
+							);
+
+							myMap.geoObjects.add(myPlacemark);
+							myMap.behaviors.disable('scrollZoom');
 						});
-
-						const myPlacemark = new ymaps.Placemark(coords, 
-							{
-								hintContent: 'г. Москва, Большая Черемушкинская ул., 34, офис 237',
-								balloonContent: 'г. Москва, Большая Черемушкинская ул., 34, офис 237'
-							},
-							{
-								iconLayout: 'default#image',
-								iconImageHref: 'img/pin.svg',
-								iconImageSize: [36, 36],
-								iconImageOffset: [15, -50]
-							}
-						);
-
-						myMap.geoObjects.add(myPlacemark);
-						myMap.behaviors.disable('scrollZoom');
-					});
-					} else {
-						console.error("Элемент с ID", xID, "не найден.");
+						} else {
+							console.error("Элемент с ID", xID, "не найден.");
+						}
 					}
-				}
 
-				// Вызов функции создания карты
-				createMap('contacts__map', [55.682758, 37.605360]); // Координаты офиса в Москве
-			});
-		</script>
+					// Вызов функции создания карты
+					createMap('contacts__map', [55.682758, 37.605360]); // Координаты офиса в Москве
+				});
+			</script>
 
 		</main>
 

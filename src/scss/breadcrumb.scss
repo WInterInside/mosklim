@@ -1,0 +1,38 @@
+.breadcrumb {
+	&--catalog {
+		margin-bottom: 2em;
+	}
+}
+
+.breadcrumb ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	width: max-content;
+
+	font-size: 13px;
+	line-height: 120%;
+	color: #2d3a4d;
+
+	@media (max-width: 890px) {
+		font-size: 12px;
+	}
+}
+
+.breadcrumb ol li {
+	margin-right: 17px;
+
+	@media (max-width: 890px) {
+		margin-right: 8px;
+	}
+}
+
+.span_m_l_20 {
+	margin-left: 15px;
+
+	@media (max-width: 890px) {
+		margin-left: 6px;
+	}
+}
