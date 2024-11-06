@@ -186,6 +186,10 @@
 			flex-shrink: 0;
 			width: 248px;
 			height: 45px;
+
+			@media only screen and (max-width: 1100px) {
+				margin-top: -5px;
+			}
 		}
 
 		& span {
