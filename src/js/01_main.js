@@ -25,12 +25,22 @@ document.addEventListener('click', (e) => {
 window.addEventListener("scroll", handleScroll);
 
 function handleScroll() {
-	const headerElement = document.querySelector('[data-element="header"]');
-	// const headerHeight = headerElement.offsetHeight / 3;
-
 	if (window.scrollY > 0) {
 		body.classList.add('is-scrolled');
 	} else {
 		body.classList.remove('is-scrolled');
 	}
 }
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener('click', function(e) {
+		e.preventDefault();
+		let destination = document.querySelector(this.getAttribute('href'));
+		const header = document.querySelector('[data-element="header"]');
+		if (destination) {
+			let headerHeight = (header.offsetHeight + 30);
+			let topOfDestination = destination.getBoundingClientRect().top + window.scrollY - headerHeight;
+			window.scrollTo({ top: topOfDestination, behavior: "smooth" });
+		}
+	});
+});
