@@ -36,8 +36,26 @@
 		background-color: #79BF1B;
 		background: linear-gradient(0deg, #518311 0%, #79BF1B 100%);
 
-		&:hover {
-			box-shadow: inset 0px 0px 15px 0px #518311;
+		@media (hover: hover) {
+			&:hover {
+				box-shadow: inset 0px 0px 15px 0px #518311;
+			}
+		}
+	}
+
+	&--download {
+		padding-left: 69px;
+		background-color: #56808D;
+
+		background-image: url("../img/pdf.svg");
+		background-size: 32px 32px;
+		background-repeat: no-repeat;
+		background-position: left 28px center;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: darken($color: #56808D, $amount: 10%);
+			}
 		}
 	}
 }
