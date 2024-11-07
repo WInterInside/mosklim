@@ -1,0 +1,15 @@
+.sitemap {
+	padding: 100px 0;
+
+	& ul {
+		& li {
+			& a {
+				text-transform: uppercase;
+				font-size: 30px;
+				line-height: 46px;
+				font-weight: 600;
+				color: #214250;
+			}
+		}
+	}
+}
