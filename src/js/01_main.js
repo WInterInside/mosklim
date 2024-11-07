@@ -103,19 +103,19 @@ class Tabs {
 document.addEventListener('click', (e) => {
 	let el = e.target.closest('[data-elements~="tabsBtn"]');
 	if (el) {
-	  let id = el.dataset.tab;
-	  let tabs = el.closest('[data-elements~="tabs"]');
-	  let tabContents = tabs.querySelectorAll('[data-tab]');
-  
-	  tabContents.forEach((item) => {
+	let id = el.dataset.tab;
+	let tabs = el.closest('[data-elements~="tabs"]');
+	let tabContents = tabs.querySelectorAll('[data-tab]');
+
+	tabContents.forEach((item) => {
 		item.classList.toggle('is-active', id === item.dataset.tab);
-	  });
-  
-	  // Example method to set the active tabs
-	  function setTabs(tabsContainer, activeTabId) {
+	});
+
+	// Example method to set the active tabs
+	function setTabs(tabsContainer, activeTabId) {
 		console.log(`Setting tabs for ${activeTabId} in ${tabsContainer}`);
-	  }
-  
-	  setTabs(tabs, id);
 	}
-  });
+
+	setTabs(tabs, id);
+	}
+});

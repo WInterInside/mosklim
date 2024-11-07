@@ -35,6 +35,12 @@ body {
 .main {
 	position: relative;
 	flex-grow: 1;
+	transition: padding .3s;
+	padding-top: 186px;
+
+	@media only screen and (max-width: 769px) {
+		padding-top: 86px;
+	}
 }
 
 .page-heading {
