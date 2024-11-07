@@ -19,6 +19,10 @@ body {
 	font-style: normal;
 	font-size: 20px;
 	line-height: 28px;
+
+	&.is-popup-open {
+		overflow: hidden;
+	}
 }
 
 .wrapper {
