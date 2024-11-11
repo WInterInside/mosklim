@@ -37,12 +37,14 @@
 	}
 
 	&__name {
+		display: inline-block;
 		font-size: 32px;
 		font-weight: 500;
 		line-height: 42px;
 		color: #214250;
 		margin-bottom: 26px;
 		text-align: center;
+		width: 100%;
 	}
 
 	&__overlay {
@@ -59,7 +61,7 @@
 		overflow: hidden;
 		max-width: 456px;
 		width: 456px;
-		min-height: 530px;
+		// min-height: 530px; для модалки с формой
 		padding: 30px 62px;
 		border-radius: 16px;
 		background-color: #EBEBEB;

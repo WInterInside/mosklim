@@ -294,3 +294,15 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 796px) {
+	.catalog {
+		&__content {
+			&--card {
+				aside {
+					display: none;
+				}
+			}
+		}
+	}
+}
