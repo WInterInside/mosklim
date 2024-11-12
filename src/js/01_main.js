@@ -1,6 +1,6 @@
 const body = document.body;
 // Получаем элемент навигации
-const nav =document.querySelector('[data-element="nav"]');
+const nav = document.querySelector('[data-element="nav"]');
 
 // Определяем начальную позицию навигации
 const initialNavPosition = nav.offsetTop;

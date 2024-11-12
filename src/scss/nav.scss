@@ -1,10 +1,71 @@
 .nav {
 	width: 100%;
-	position: relative;
-	z-index: 11;
 	margin-bottom: 90px;
-	transition: transform .3s;
-	transform: none;
+
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__item {
+		flex-shrink: 0;
+		border-radius: 64px;
+		overflow: hidden;
+
+		&.is-current {
+			background-color: #F1F1F1;
+		}
+
+		& a {
+			display: flex;
+			color: #1A1A1ADB;
+			text-transform: uppercase;
+			padding: 20px 32px;
+
+			transition: color .3s, background-color .3s, opacity .3s, box-shadow .3s;
+
+			@media (hover: hover) {
+				&:hover {
+					opacity: .7;
+				}
+			}
+		}
+
+		@media only screen and (max-width: 1690px) {
+			& a {
+				padding: 20px;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 1250px) {
+		position: absolute;
+		z-index: 11;
+		top: 128px;
+		left: 0;
+		background-color: rgba(207, 207, 207, 0.5);
+		width: 100%;
+		max-width: 1920px;
+		margin: 0 auto;
+		padding: 0 96px;
+		padding: 0 20px;
+		overflow-x: scroll;
+	}
+}
+
+.nav-dynamic {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	z-index: 11;
+	transition: transform .5s;
+	pointer-events: none;
+	transform: translateY(-100%);
+	background-color: red;
+	overflow-x: scroll;
 
 	&__list {
 		list-style: none;
@@ -40,6 +101,7 @@
 	}
 }
 
+
 .scrollable-nav-container {
 	// @media only screen and (max-width: 769px) {
 	// 	height: calc(100vh - 100px);
@@ -54,15 +116,9 @@
 }
 
 body.is-scroll {
-	.nav {
-		position: fixed;
-		top: -100px;
-		transform: translateY(100px);
-		left: 0;
-		background-color: red;
-	}
-
-	.hero__content {
-		padding-top: 303px;
+	.nav-dynamic {
+		transform: none;
+		opacity: 1;
+		pointer-events: auto;
 	}
 }
