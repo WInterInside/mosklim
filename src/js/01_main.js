@@ -1,44 +1,29 @@
 const body = document.body;
-const navToggle = document.querySelector('[data-element~="navToggle"]');
+// const navToggle = document.querySelector('[data-element~="navToggle"]');
 const navMore = document.querySelector('.header__nav-more');
-const orderBtn = document.querySelector('[data-element="orderBtn"]');
-const modal = document.querySelector('[data-element="orderForm"]');
-const closeBtn = document.querySelector('[data-element="popupClose"]');
-const overlay = modal.querySelector('.popup__overlay');
-const swipeBtn = document.querySelector('[data-element="popupSwipe"]');
 
-const toggleNav = () => {
-	if (!body.classList.contains('is-nav-open')) {
-		body.classList.add('is-nav-open');
-	} else {
-		body.classList.remove('is-nav-open');
-	}
-};
+// const toggleNav = () => {
+// 	if (!body.classList.contains('is-nav-open')) {
+// 		body.classList.add('is-nav-open');
+// 	} else {
+// 		body.classList.remove('is-nav-open');
+// 	}
+// };
 
 const handleScroll = () => {
 	(window.scrollY > 0) ?  body.classList.add('is-scrolled') : body.classList.remove('is-scrolled');
 }
 
-const closeModal = () => {
-	modal.classList.remove('is-open');
-	body.classList.remove('is-popup-open');
-}
-
-const openModal = () => {
-	modal.classList.add('is-open');
-	body.classList.add('is-popup-open');
-}
-
-navToggle.addEventListener('click', toggleNav);
-navMore.addEventListener('click', toggleNav);
+// navToggle.addEventListener('click', toggleNav);
+// navMore.addEventListener('click', toggleNav);
 window.addEventListener("scroll", handleScroll);
 
 // Add event listener to document to close nav when clicking outside
-document.addEventListener('click', (e) => {
-	if (!navToggle.contains(e.target) && !navMore.contains(e.target) && !e.target.closest('.header__nav-more')) {
-		body.classList.remove('is-nav-open');
-	}
-});
+// document.addEventListener('click', (e) => {
+// 	if (!navToggle.contains(e.target) && !navMore.contains(e.target) && !e.target.closest('.header__nav-more')) {
+// 		body.classList.remove('is-nav-open');
+// 	}
+// });
 
 // прокрутка статьи
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -53,90 +38,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 		}
 	});
 });
-
-if (orderBtn) {
-	orderBtn.addEventListener('click', () => {
-		openModal();
-	});
-
-	closeBtn.addEventListener('click', () => {
-		closeModal();
-	});
-
-	// Закрыть модальное окно при нажатии клавиши Escape
-	document.addEventListener('keydown', (e) => {
-		if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-			closeModal();
-		}
-	});
-
-	// Закрыть модальное окно при клике на overlay
-	overlay.addEventListener('click', () => {
-		closeModal();
-	});
-	// Обработка свайпа по кнопке
-	let touchstartY = 0;
-	let touchendY = 0;
-
-	swipeBtn.addEventListener('touchstart', e => {
-		touchstartY = e.changedTouches[0].screenX;
-	});
-
-	swipeBtn.addEventListener('touchend', e => {
-		touchendY = e.changedTouches[0].screenX;
-		handleSwipe();
-	});
-
-	// Функция для обработки свайпа
-	function handleSwipe() {
-		if (touchendY < touchstartY) {
-			closeModal();
-		}
-	}
-}
-
-class Tabs {
-	setTabs = (tabs, id) => {
-		this.clearTabs(tabs);
-
-		tabs.querySelectorAll('[data-tab="' + id + '"]').forEach((el) => {
-			el.classList.add('is-active');
-		});
-	}
-
-	clearTabs = (tabs) =>{
-		let tabsBtn = tabs.querySelectorAll('[data-elements ~= "tabsBtn"]'),
-			tabsItems = tabs.querySelectorAll('[data-elements ~= "tabsItem"]');
-
-		tabsBtn.forEach((el) => {
-			el.classList.remove('is-active')
-		});
-
-		tabsItems.forEach((el) => {
-			el.classList.remove('is-active')
-		});
-	}
-}
-
-document.addEventListener('click', (e) => {
-	let el = e.target.closest('[data-elements~="tabsBtn"]');
-	if (el) {
-		let id = el.dataset.tab;
-		let tabs = el.closest('[data-elements~="tabs"]');
-		let tabContents = tabs.querySelectorAll('[data-tab]');
-
-		tabContents.forEach((item) => {
-			item.classList.toggle('is-active', id === item.dataset.tab);
-		});
-
-		// Example method to set the active tabs
-		// function setTabs(tabsContainer, activeTabId) {
-		// 	console.log(`Setting tabs for ${activeTabId} in ${tabsContainer}`);
-		// }
-		// setTabs(tabs, id);
-	}
-});
-
 
 [].forEach.call( document.querySelectorAll('.form__input--tel'), function(input) {
 	var keyCode;
@@ -169,3 +70,11 @@ document.addEventListener('click', (e) => {
 	input.addEventListener("blur", mask, false);
 	input.addEventListener("keydown", mask, false)
 });
+
+$('.slider').slick({
+	dots: true,
+	infinite: true,
+	speed: 300,
+	slidesToShow: 2,
+	adaptiveHeight: true
+  });

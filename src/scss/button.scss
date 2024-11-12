@@ -1,60 +1,53 @@
 .button {
 	display: inline-flex;
+	justify-content: center;
 	align-items: center;
 	position: relative;
-	font-family: "Inter", sans-serif;
+
+	font-family: "Manrope", serif;
 	font-size: 16px;
-	line-height: 26px;
 	font-weight: 600;
-	padding: 18px 40px;
+	line-height: 23px;
+	letter-spacing: 0.01em;
 	text-align: center;
-	justify-content: center;
-	color: #FFFFFF;
+
+	padding: 20px 42px;
+	color: #ffffff;
+	background-color: #1E94CE;
 	border: none;
-	border-radius: 8px;
+	border-radius: 64px;
 	overflow: hidden;
 	cursor: pointer;
 	text-decoration: none;
 	transition: color .3s, background-color .3s, opacity .3s, box-shadow .3s;
 
-	&--sm {
-		background-color: #E0F7FD;
-		color: #214250;
-		padding: 10px;
-		border-radius: 8px;
-		height: 40px;
-		font-size: 14px;
-		line-height: 20px;
-		font-weight: 500;
-
+	@media (hover: hover) {
 		&:hover {
-			background-color: darken($color: #E0F7FD, $amount: 10%);
+			background-color: #0971a5;
 		}
 	}
 
 	&--green {
-		background-color: #79BF1B;
-		background: linear-gradient(0deg, #518311 0%, #79BF1B 100%);
+		flex-grow: 1;
+		background-color: #33AF73;
+		border: 1px solid #1A1A1A29;
 
 		@media (hover: hover) {
 			&:hover {
-				box-shadow: inset 0px 0px 15px 0px #518311;
+				background-color: darken($color: #33AF73, $amount: 5%);
 			}
 		}
 	}
 
-	&--download {
-		padding-left: 69px;
-		background-color: #56808D;
-
-		background-image: url("../img/pdf.svg");
-		background-size: 32px 32px;
-		background-repeat: no-repeat;
-		background-position: left 28px center;
+	&--lightgreen {
+		flex-grow: 1;
+		background-color: #33AF733D;
+		color: #0B766B;
+		border: 1px solid #1A1A1A29;
 
 		@media (hover: hover) {
 			&:hover {
-				background-color: darken($color: #56808D, $amount: 10%);
+				background-color: darken($color: #33AF733D, $amount: 10%);
 			}
 		}
 	}
