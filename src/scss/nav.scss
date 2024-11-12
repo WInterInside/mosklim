@@ -25,6 +25,11 @@
 			text-transform: uppercase;
 			padding: 20px 32px;
 
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 25px;
+			letter-spacing: 0.02em;
+
 			transition: color .3s, background-color .3s, opacity .3s, box-shadow .3s;
 
 			@media (hover: hover) {
@@ -39,6 +44,14 @@
 				padding: 20px;
 			}
 		}
+
+		@media only screen and (max-width: 900px) {
+			& a {
+				padding: 10px 16px;
+				font-size: 14px;
+				line-height: 20px;
+			}
+		}
 	}
 
 	@media only screen and (max-width: 1250px) {
@@ -50,8 +63,10 @@
 		width: 100%;
 		max-width: 1920px;
 		margin: 0 auto;
-		padding: 0 96px;
-		padding: 0 20px;
+		padding: 0 20px;		
+	}
+
+	@media only screen and (max-width: 900px) {
 		overflow-x: scroll;
 	}
 }
@@ -64,8 +79,7 @@
 	transition: transform .5s;
 	pointer-events: none;
 	transform: translateY(-100%);
-	background-color: red;
-	overflow-x: scroll;
+	background-color: #33af73;
 
 	&__list {
 		list-style: none;
@@ -90,6 +104,11 @@
 			text-transform: uppercase;
 			padding: 20px 32px;
 
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 25px;
+			letter-spacing: 0.02em;
+
 			transition: color .3s, background-color .3s, opacity .3s, box-shadow .3s;
 
 			@media (hover: hover) {
@@ -98,6 +117,24 @@
 				}
 			}
 		}
+
+		@media only screen and (max-width: 1690px) {
+			& a {
+				padding: 20px;
+			}
+		}
+
+		@media only screen and (max-width: 900px) {
+			& a {
+				padding: 10px 16px;
+				font-size: 14px;
+				line-height: 20px;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 900px) {
+		overflow-x: scroll;
 	}
 }
 

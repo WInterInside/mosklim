@@ -76,6 +76,10 @@
 	.footer {
 		padding: 24px 0;
 
+		&__copy {
+			text-align: center;
+		}
+
 		&__wrapper {
 			flex-direction: column;
 			gap: 16px;
