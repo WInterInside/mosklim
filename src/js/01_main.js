@@ -1,29 +1,9 @@
 const body = document.body;
-// const navToggle = document.querySelector('[data-element~="navToggle"]');
-const navMore = document.querySelector('.header__nav-more');
+// Получаем элемент навигации
+const nav =document.querySelector('[data-element="nav"]');
 
-// const toggleNav = () => {
-// 	if (!body.classList.contains('is-nav-open')) {
-// 		body.classList.add('is-nav-open');
-// 	} else {
-// 		body.classList.remove('is-nav-open');
-// 	}
-// };
-
-const handleScroll = () => {
-	(window.scrollY > 0) ?  body.classList.add('is-scrolled') : body.classList.remove('is-scrolled');
-}
-
-// navToggle.addEventListener('click', toggleNav);
-// navMore.addEventListener('click', toggleNav);
-window.addEventListener("scroll", handleScroll);
-
-// Add event listener to document to close nav when clicking outside
-// document.addEventListener('click', (e) => {
-// 	if (!navToggle.contains(e.target) && !navMore.contains(e.target) && !e.target.closest('.header__nav-more')) {
-// 		body.classList.remove('is-nav-open');
-// 	}
-// });
+// Определяем начальную позицию навигации
+const initialNavPosition = nav.offsetTop;
 
 // прокрутка статьи
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -77,4 +57,20 @@ $('.slider').slick({
 	speed: 300,
 	slidesToShow: 2,
 	adaptiveHeight: true
-  });
+});
+
+// Функция для изменения классов
+const updateNavClasses = () => {
+	const scrollPosition = window.scrollY;
+
+	// Если навигация скрылась из вида
+	if (scrollPosition > initialNavPosition) {
+		body.classList.add('is-scroll');
+	} else {
+		body.classList.remove('is-scroll');
+	}
+}
+
+updateNavClasses();
+// Навешиваем обработчик события прокрутки
+window.addEventListener('scroll', updateNavClasses);

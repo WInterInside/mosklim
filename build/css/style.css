@@ -655,7 +655,7 @@
 }
 .hero__content {
   width: 50%;
-  padding-top: 303px;
+  padding-top: 213px;
 }
 @media only screen and (max-width: 1690px) {
   .hero__content {
@@ -824,6 +824,14 @@
   width: 100%;
   position: relative;
   z-index: 11;
+  margin-bottom: 90px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
 }
 .nav__list {
   list-style: none;
@@ -832,21 +840,48 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .nav__item {
-  text-transform: uppercase;
-  padding: 20px 32px;
-  border-radius: 64px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  border-radius: 64px;
+  overflow: hidden;
 }
 .nav__item.is-current {
   background-color: #F1F1F1;
 }
 .nav__item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: rgba(26, 26, 26, 0.8588235294);
+  text-transform: uppercase;
+  padding: 20px 32px;
+  -webkit-transition: color 0.3s, background-color 0.3s, opacity 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, background-color 0.3s, opacity 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, background-color 0.3s, opacity 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, background-color 0.3s, opacity 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+@media (hover: hover) {
+  .nav__item a:hover {
+    opacity: 0.7;
+  }
+}
+
+body.is-scroll .nav {
+  position: fixed;
+  top: -100px;
+  -webkit-transform: translateY(100px);
+      -ms-transform: translateY(100px);
+          transform: translateY(100px);
+  left: 0;
+  background-color: red;
+}
+body.is-scroll .hero__content {
+  padding-top: 303px;
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
