@@ -1,76 +1,86 @@
 .hero {
-	margin-bottom: 160px;
+	width: 100%;
+	min-height: 683px;
+	background-image: url("../img/hero-bg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 
-	&__container {
-		width: 100%;
-		max-width: 1920px;
-		margin: 0 auto;
-		padding: 0 0 0 96px;
+	&--atom {
+		background-image: none;
+		background-color: #F2FCFF;
+	}
 
-		@media only screen and (max-width: 1690px) {
-			padding: 0 0 0 40px;
+	&__content {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 1; 
+
+		&--atom {
+			padding-top: 60px;
 		}
 
-		@media only screen and (max-width: 1199px) {
-			padding: 0 0 0 20px;
+		@media only screen and (max-width: 769px) {
+			&--atom {
+				padding-top: 0;
+			}
+		}
+	}
+	
+	&__caption {
+		font-weight: 700;
+		font-size: 48px;
+		line-height: 67px;
+		color: #214250;
+		margin-bottom: 24px;
+
+		&--atom {
+			font-weight: 600;
+			font-size: 36px;
+			line-height: 58px;
 		}
 
-		@media only screen and (max-width: 900px) {
-			padding: 0 20px;
+		@media only screen and (max-width: 1842px) {
+			&--atom {
+				font-weight: 600;
+				font-size: 30px;
+				line-height: 50px;
+			}
+		}
+
+		@media only screen and (max-width: 1272px) {
+			text-align: center;
+		}
+
+		@media only screen and (max-width: 769px) {
+			font-weight: 600;
+			font-size: 28px;
+			line-height: 38px;
 		}
 	}
 
 	&__wrapper {
-		width: 100%;
-		gap: 98px;
 		display: flex;
+		padding: 61px 0;
+		gap: 36px;
 
-		@media only screen and (max-width: 1690px) {
-			gap: 28px;
+		&--atom {
+			padding: 55px 0;
+			gap: 96px;
 		}
 
-		@media only screen and (max-width: 900px) {
+		@media only screen and (max-width: 1272px) {
+			padding: 30px 0;
 			flex-direction: column-reverse;
-		}
-	}
-
-	&__content {
-		width: 50%;
-		padding-top: 213px;
-
-		@media only screen and (max-width: 1690px) {
-			padding-top: 203px;
+			align-items: center;
 		}
 
-		@media only screen and (max-width:1250px) {
-			padding-top: 253px;
-		}
-
-		@media only screen and (max-width: 900px) {
-			width: 100%;
-			padding-top: 0;
-		}
-	}
-
-	&__name {
-		width: 50%;
-		font-size: 64px;
-		font-weight: 500;
-		line-height: 77px;
-		letter-spacing: -0.02em;
-		text-align: left;
-		margin-bottom: 52px;
-
-		@media only screen and (max-width:1272px) {
-			font-size: 44px;
-			line-height: 57px;
-		}
-
-		@media only screen and (max-width: 900px) {
-			width: 100%;
-			font-size: 34px;
-			line-height: 47px;
-			margin-bottom: 22px;
+		@media only screen and (max-width: 769px) {
+			&--atom {
+				padding: 55px 0;
+				gap: 40px;
+			}
 		}
 	}
 
@@ -78,104 +88,99 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
-	}
-
-	&__item {
 		display: flex;
-		align-items: center;
-		padding: 16px 0;
-		font-size: 20px;
-		font-weight: 400;
-		line-height: 24px;
-		letter-spacing: 0.01em;
-		text-align: left;
-		color: #1A1A1ADB;
-		border-bottom: 1px solid #1A1A1A29;
+		flex-direction: column;
+		gap: 20px;
+		margin-bottom: 52px;
 
-		
-
-		@media only screen and (max-width: 900px) {
-			flex-direction: column;
+		@media only screen and (max-width: 1272px) {
 			text-align: center;
-			gap: 8px;
+		}
+
+		@media only screen and (max-width: 769px) {
+			gap: 16px;
 		}
 	}
 
-	&__icon {
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-shrink: 0;
-		width: 52px;
-		height: 52px;
-		line-height: 0;
-		margin-right: 20px;
-		background-color: #1A1A1A0A;
-		border-radius: 50%;
-		transition: color .3s, background-color .3s, opacity .3s, box-shadow .3s;
+	&__button {
+		width: 244px;
+		@media only screen and (max-width: 1272px) {
+			margin: 0 auto;
+		}
+	}
 
-		@media (hover: hover) {
-			&:hover {
-				background-color: #f3f3f3;
+	&__item {
+		font-size: 20px;
+		line-height: 28px;
+		font-weight: 600;
+		color: #214250;
+
+		@media only screen and (max-width: 769px) {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+
+	&__img {
+		position: relative;
+		z-index: 1;
+		width: 629px;
+		height: 561px;
+		flex-shrink: 0;
+
+		&--atom {
+			width: 702px;
+			height: 600px;
+		}
+
+		@media only screen and (max-width: 1842px) {
+			&--atom {
+				width: 629px;
+				height: 561px;
+			}
+		}
+
+		@media only screen and (max-width: 769px) {
+			width: 100%;
+			height: auto;
+
+			& img {
+				width: 100%;
 			}
 		}
 	}
 
-	&__controls {
-		display: flex;
-		gap: 24px;
-		justify-content: space-between;
-		margin-top: 52px;
-		width: 100%;
+	&__atom-logo {
+		position: absolute;
+		top: 360px;
+		left: -175px;
+		width: 254px;
+		height: 185px;
 
-		@media only screen and (max-width: 1000px) {
-			flex-direction: column;
+		@media only screen and (max-width: 1030px) {
+			top: 0;
+			left: 0;
+		}
+
+		@media only screen and (max-width: 769px) {
+			display: none;
 		}
 	}
 
-	&__ph {
-		position: relative;
-		width: 60%;
-		flex-grow: 1;
-		border-radius: 24px;
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-		overflow: hidden;
+	&__atom-leefs {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		width: 420px;
+		height: 141px;
 
-		&::after {
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			background: linear-gradient(13.92deg, rgba(0, 0, 0, 0) 61.09%, rgba(0, 0, 0, 0.36) 88.43%);
+		@media only screen and (max-width: 1272px) {
+			bottom: 250px;
 		}
 
-		& img {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			inset: 0;
-			object-fit: cover;
-			object-position: center;
-		}
-
-		@media only screen and (min-width: 1920px) {
-			width: calc(50% + 300px);
-			margin-right: -300px;
-		}
-
-		@media only screen and (max-width: 900px) {
-			margin-top: 81px;
-			height: 100vh;
-			width: calc(100% + 40px);
-			margin-left: -20px;
-			border-radius: 0;
+		@media only screen and (max-width: 769px) {
+			bottom: -100px;
+			right: -200px;
 		}
 	}
 }
-
-
-@media only screen and (max-width: 769px) {}
