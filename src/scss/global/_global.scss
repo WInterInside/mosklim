@@ -37,7 +37,11 @@ body {
 	position: relative;
 	flex-grow: 1;
 	transition: padding .3s;
-	padding-top: 186px;
+	padding-top: 274px;
+
+	@media only screen and (max-width: 1199px) {
+		padding-top:  254px;
+	}
 
 	@media only screen and (max-width: 769px) {
 		padding-top: 86px;

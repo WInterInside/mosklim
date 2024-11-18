@@ -1,18 +1,21 @@
 .header {
 	background-color: transparent;
-	position: relative;
 	z-index: 99;
-	height: 184px;
+	height: 274px;
 	width: 100%;
-	background-image: url("../img/header-bg.jpg");
+	background-image: url("../img/header-bg-new.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top;
 	transition: box-shadow .3s, height .3s, transform .3s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-family: Arial, Helvetica, sans-serif;
 
-		position: fixed;
-		top: 0;
-		left: 0;
+	@media only screen and (max-width: 1199px) {
+		height: 254px;
+	}
 
 	@media only screen and (max-width: 769px) {
 		background-color: rgb(201, 239, 248);
@@ -39,9 +42,10 @@
 
 	&__logo {
 		display: flex;
+		flex-direction: column;
 		flex-shrink: 0;
-		gap: 25px;
-		margin-right: auto;
+		gap: 8px;
+		margin-right: 40px;
 		margin-left: 40px;
 
 		& img {
@@ -55,12 +59,14 @@
 		& span {
 			flex-shrink: 0;
 			font-size: 13px;
+			font-weight: 700;
 			line-height: 21px;
-			color: #8E8F8F;
+			color: #020202;
 		}
 
 		@media only screen and (max-width: 1302px) {
-			margin-left: 20px;
+			margin-left: 40px;
+			margin-right: auto;
 
 			& span {
 				display: none;
@@ -78,10 +84,24 @@
 		}
 	}
 
+	&__notice {
+		width: 430px;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 25.6px;
+		text-align: left;
+		color: #020202;
+
+		@media only screen and (max-width: 1302px) {
+			display: none;
+		}
+
+	}
+
 	&__contacts {
-		display: flex;
-		width: 50%;
-		margin-left: 40px;
+		display: flex;		
+		gap: 40px;
+		margin-left: auto;
 		justify-content: space-between;
 
 		@media only screen and (max-width: 1199px) {
@@ -97,13 +117,11 @@
 		display: flex;
 		flex-direction: column;
 		flex-shrink: 0;
-		font-size: 14px;
-		line-height: 22px;
 		margin-right: 40px;
 
 		& a {
 			font-weight: 600;
-			color: #214250;
+			color: #020202;
 			transition: opacity .3s;
 
 			&:hover {
@@ -112,7 +130,9 @@
 		}
 
 		& span {
-			color: #8E8F8F;
+			font-size: 13px;
+			line-height: 18px;
+			color: #020202;
 		}
 
 		@media only screen and (max-width: 1199px) {
@@ -122,19 +142,18 @@
 
 	&__tel {
 		display: flex;
-		align-items: center;
-		gap: 30px;
+		flex-direction: column;
 
 		& span {
-			font-size: 14px;
-			line-height: 22px;
-			color: #8E8F8F;
+			font-size: 13px;
+			line-height: 18px;
+			color: #020202;
 		}
 
 		& a {
 			font-size: 18px;
 			line-height: 25px;
-			color: #214250;
+			color: #020202;
 			font-weight: 600;
 			transition: opacity .3s;
 
@@ -152,6 +171,12 @@
 			& span {
 				display: none;
 			}
+		}
+
+		@media only screen and (max-width: 769px) {
+			& a {
+				color: #fff;
+			}	
 		}
 	}
 
@@ -171,12 +196,12 @@
 
 			& a {
 				font-weight: 600;
-				color: #214250;
+				color: #fff;
 				text-align: center;
 			}
 
 			& span {
-				color: #ffffff;
+				color: #fff;
 			}
 		}
 
@@ -190,9 +215,9 @@
 
 	&__nav {
 		width: 100%;
-		background-color: #66a316d4;
+		background-color: #00a1d7ef;
 		padding: 14px 0;
-		margin-top: 50px;
+		margin-top: 125px;
 		position: relative;
 		transition: opacity .3s, transform .3s, margin .3s;
 		backdrop-filter: blur(5px);
@@ -212,9 +237,8 @@
 		}
 
 		&-item {
-
 			& a {
-				color: #ffffff;
+				color: #fff;
 				transition: opacity .3s;
 
 				&:hover {
@@ -229,8 +253,9 @@
 			transform: translateX(-100%);
 			position: absolute;
 			z-index: 10;
-			top: 36px;
+			top: 0;
 			left: 0;
+			padding: 30px 0;
 
 			&-list {
 				flex-direction: column;
@@ -245,19 +270,19 @@
 		display: flex;
 		position: absolute;
 		z-index: 10;
-		top: -30px;
+		top: -130px;
 		left: 0;
 		width: 250px;
 		padding: 20px;
 		border: 1px solid #ffffff;
-		box-shadow: 0px 0px 15px 0px #518311;
+		box-shadow: 0px 0px 15px 0px #00A2D7;
 		border-radius: 10px;
 		border-top-left-radius: 0;
 		flex-direction: column;
 		gap: 10px;
 		list-style: none;
 		margin: 0;
-		background-color: #578b13;
+		background-color: #00A2D7;
 		transition: opacity .3s;
 		opacity: 0;
 
@@ -282,7 +307,7 @@
 		& a {
 			font-size: 16px;
 			line-height: 24px;
-			color: #ffffff;
+			color: #fff;
 			text-transform: uppercase;
 			transition: opacity .3s;
 
@@ -302,7 +327,7 @@
 		width: 46px;
 		height: 46px;
 		border-radius: 6px;
-		background-color: #66A316;
+		background-color: #00A2D7;
 		flex-shrink: 0;
 		padding: 8px;
 		position: relative;
@@ -331,7 +356,7 @@
 
 		@media (hover: hover) {
 			&:hover {
-				background-color: darken($color: #66A316, $amount: 5%);
+				background-color: darken($color: #00A2D7, $amount: 5%);
 			}
 		}
 	}
@@ -370,11 +395,11 @@ body.is-nav-open {
 	}
 
 	.header__burger {
-		box-shadow: inset 0px 0px 15px 0px #518311;
+		box-shadow: inset 0px 0px 15px 0px #0184af;
 
 		@media (hover: hover) {
 			&:hover {
-				background-color: darken($color: #66A316, $amount: 0%);
+				background-color: darken($color: #0184af, $amount: 0%);
 			}
 		}
 	}
@@ -386,21 +411,17 @@ body.is-nav-open {
 
 body.is-scrolled {
 	.header {
-		transform: translateY(-26px);
-		box-shadow: 0px 11px 15px -10px #000000;
-		height: 138px;
-
 		@media only screen and (max-width: 769px) {
+			position: fixed;
 			height: auto;
 			transform: none;
+			box-shadow: 0px 11px 15px -10px #000000;
 		}
 	}
 
 	.header__nav {
-		margin-top: 1px;
-
 		@media only screen and (max-width: 769px) {
-			top: 85px;
+			top: -39px;
 		}
 	}
 
@@ -409,8 +430,6 @@ body.is-scrolled {
 	}
 
 	.main {
-		padding-top: 102px;
-
 		@media only screen and (max-width: 769px) {
 			padding-top: 86px;
 		}
